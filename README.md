@@ -1,0 +1,4 @@
+SDLCTestingTraining
+===================
+
+Project for exercises
