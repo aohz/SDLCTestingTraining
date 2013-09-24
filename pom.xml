@@ -2,26 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.arquilliantesting</groupId>
-  <artifactId>SDLCArquillianTesting</artifactId>
+  <groupId>com.gft.testingtraining</groupId>
+  <artifactId>SDLCBasicTesting</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>SDLCArquillianTesting</name>
+  <name>SDLCBasicTesting</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
- <!--
-    We include:
-    1-Arquillian JUnit integration (or TestNG integration).
-    2-Arquillian container adapter for the target container.
-    3-Container runtime (for an embedded container) or container client (for a remote container).
-    -->
   <build>
-        <finalName>ArquillianTesting</finalName>
+        <finalName>BasicTesting</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -38,61 +32,17 @@
         </plugins>
     </build>
   <dependencies>
-    <dependency>
-        <groupId>org.jboss.spec</groupId>
-        <artifactId>jboss-javaee-6.0</artifactId>
-        <version>1.0.0.Final</version>
-        <type>pom</type>
-        <scope>provided</scope>
-    </dependency>
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.8.1</version>
-        <scope>test</scope>
-    </dependency>
-    <!-- 1-Arquillian JUnit integration (or TestNG integration). -->
-    <dependency>
-        <groupId>org.jboss.arquillian.junit</groupId>
-        <artifactId>arquillian-junit-container</artifactId>
-        <scope>test</scope>
-    </dependency>
-    <!--
-    2-Arquillian container adapter for the target container.
-    3-Container runtime (for an embedded container) or container client (for a remote container).
-      We’re using an embedded container in this example, so we need the container runtime, Weld.
-    -->
-    <dependency>
-        <groupId>org.jboss.arquillian.container</groupId>
-        <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-        <version>1.0.0.CR3</version>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.jboss.weld</groupId>
-        <artifactId>weld-core</artifactId>
-        <version>1.1.5.Final</version>
-        <scope>test</scope>
-    </dependency>
-    <!-- log -->
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-simple</artifactId>
-        <version>1.6.4</version>
-        <scope>test</scope>
-    </dependency>
-  </dependencies>
-  
-  <dependencyManagement>
-    <dependencies>
-        <!-- import the BOM, or version matrix, for Arquillian’s transitive dependencies.-->
         <dependency>
-            <groupId>org.jboss.arquillian</groupId>
-            <artifactId>arquillian-bom</artifactId>
-            <version>1.0.3.Final</version>
-            <scope>import</scope>
-            <type>pom</type>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.9.5</version>
+            <scope>test</scope>
         </dependency>
-    </dependencies>
-</dependencyManagement>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+   </dependencies>
 </project>
