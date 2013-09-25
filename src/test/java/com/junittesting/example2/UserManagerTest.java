@@ -1,14 +1,15 @@
 package com.junittesting.example2;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import java.util.ArrayList;
+import java.util.Date;
+import org.junit.Assert;
 
-import org.junit.After;
-import org.junit.Before;
+import org.mockito.*;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserManagerTest {
@@ -40,9 +41,7 @@ public class UserManagerTest {
  
         //Verify if saveUser was invoked on userService with given 'user' object.
         Mockito.verify(userService).saveUser(user);
- 
-        //Verify with Argument Matcher
-        Mockito.verify(userService).saveUser(Mockito.<user>any());
+
     }
     
     @Test
@@ -57,19 +56,6 @@ public class UserManagerTest {
         Mockito.verifyNoMoreInteractions(userService);
     }
     
-    @Test
-    public void testZeroInteractionsWithMock() throws Exception {
-
-        User user = new User("user1", new Date());
-
-        //call method where no call to userService will be made
-        userManager.getUserLastLogin(user);
-        Mockito.verifyZeroInteractions(userService);
-
-        //Another way to check zero interactions
-        userManager.getUserLastLogin(user);
-        Mockito.verify(userService, Mockito.never());
-    }
     
     @Test
     public void testFindUser() throws Exception {
@@ -107,59 +93,6 @@ public class UserManagerTest {
         Assert.assertEquals("value1", mock.get(0));
         Assert.assertEquals("value2", mock.get(1));
 
-    }
-    
-    @Test
-    public void testStubAndAnswer() throws Exception {
- 
-        //when method is invoked on mock, do some processing before return the stubbed object
- 
-        Mockito.when(userService.findUserByName(Mockito.anyString())).then(new Answer<user>() {
- 
-            public User answer(InvocationOnMock invocation) throws Throwable {
- 
-                //check argument passed to method if its not null
-                //then give me time of day and make me a coffee before you return
-                //you get the point, you can do anything here before returning
- 
-                Assert.assertNotNull(invocation.getArguments()[0]);
- 
-                return new User("UserCreatedByCallback");
-            }
-        });
- 
-        User user = userManager.findUser("user1");
- 
-        Assert.assertEquals("UserCreatedByCallback", user.getUserName());
- 
- 
-        //Another way of answering the call
-        Mockito.doAnswer(new Answer() {
- 
-            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {
- 
-                return new User("UserCreatedByCallback");
- 
-            }
- 
-        }).when(userService).findUserByName(Mockito.anyString());
- 
-    }
-    
-    @Test
-    public void testArgumentMatcher() throws Exception {
- 
-        Mockito.when(userService.findUserByName(Mockito.<string>any())).thenReturn(Mockito.<user>any());
- 
-        userManager.findUser("user");
- 
-        //Verify if saveUser was invoked on userService with given 'user' object.
-        Mockito.verify(userService).findUserByName("user");
- 
-        //Another example
-        userManager.updateUser("user", new Date());
- 
-        Mockito.verify(userService).updateUser(Mockito.eq("user"), Mockito.<date>any());
     }
     
     @Test(expected = RuntimeException.class)
