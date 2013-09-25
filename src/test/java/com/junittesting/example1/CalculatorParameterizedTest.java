@@ -40,7 +40,9 @@ public class CalculatorParameterizedTest {
     /*
      * 3
      * Include a method to provide Parameters.
-     * The signature of this method must be 
+     * Parameters can be provided from static properties files. This allows 
+     * adapt sets of parameters for our tests.
+     * The signature of this method must be:
      * @Parameters 
      * public static java.util.Collection, NO parameters.
      */

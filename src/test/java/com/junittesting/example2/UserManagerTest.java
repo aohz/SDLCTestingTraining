@@ -12,19 +12,26 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserManagerTest {
- 
+    
+    /*
+     * The mock can be created in two ways:
+     * a) use of @Mock annotation. 
+     * In this case use the MockitoJUnitRunner test runner.
+     * b) Invoking the static method mock(), e.g. in the setup 
+     * method of the JUnit framework test class.
+     */
     @InjectMocks
     private UserManager userManager;
  
     @Mock
     private UserService userService;
     
-    @Before
-    public void setUp() throws Exception {
-        userService = Mockito.mock(UserService.class);
-        userManager = new UserManager();
-        userManager.setUserService(userService);
-    }
+//    @Before
+//    public void setUp() throws Exception {
+//        userService = Mockito.mock(UserService.class);
+//        userManager = new UserManager();
+//        userManager.setUserService(userService);
+//    }
     
     @Test
     public void testSaveUser() throws Exception {
@@ -67,7 +74,13 @@ public class UserManagerTest {
     @Test
     public void testFindUser() throws Exception {
 
-        //Stub the value that will returned on call to userService.findUserByName
+        
+    /* One of the basic functions of mocking frameworks is an ability to return
+       a given value when a specific method is called. It can be done using
+       Mockito.when() in conjunction with thenReturn (). This process of defining
+       how a given mock method should behave is called stubbing. */
+        
+//      Stub the value that will returned on call to userService.findUserByName
         User stubbedUser = new User("userAfterSave");
         Mockito.when(userService.findUserByName("user1")).thenReturn(stubbedUser);
 
