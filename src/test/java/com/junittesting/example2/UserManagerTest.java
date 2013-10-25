@@ -1,15 +1,12 @@
 package com.junittesting.example2;
 
 import java.util.ArrayList;
-import java.util.Date;
 import org.junit.Assert;
 
 import org.mockito.*;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserManagerTest {
