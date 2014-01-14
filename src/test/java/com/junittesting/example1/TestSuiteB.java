@@ -5,9 +5,9 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 /**
- * Test-suite.
+ * Test-suite B
  * 
  */
 @RunWith(value = Suite.class)
-@SuiteClasses(value={CalculatorBasicTest.class,CalculatorParameterizedTest.class})
+@SuiteClasses(value={CalculatorBasicTest.class, CalculatorParameterizedTest.class})
 public class TestSuiteB {}
