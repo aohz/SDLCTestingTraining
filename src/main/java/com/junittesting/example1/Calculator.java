@@ -4,6 +4,9 @@ package com.junittesting.example1;
 //comment development
 
 public class Calculator {
+	//Comment for feature 1
+	//Done task in feature 1
+	
     /* addition */
     public double add(double number1, double number2) {
         return 0.0;
