@@ -2,6 +2,7 @@
 package com.junittesting.example1;
 
 //Comment for feature 2
+//Finished Task in feature 2
 
 public class Calculator {
     /* addition */
