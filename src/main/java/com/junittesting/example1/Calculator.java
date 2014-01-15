@@ -1,11 +1,11 @@
 
 package com.junittesting.example1;
 
-//comment development
 
 public class Calculator {
 	//Comment for feature 1
 	//Done task in feature 1
+	//Finished Task in feature 2
 	
     /* addition */
     public double add(double number1, double number2) {
