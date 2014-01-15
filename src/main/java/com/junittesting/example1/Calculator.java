@@ -2,6 +2,7 @@
 package com.junittesting.example1;
 
 //Pre-Release version
+//This is a comment in master branch
 
 public class Calculator {
     /* addition */
