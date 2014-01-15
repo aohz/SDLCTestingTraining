@@ -1,6 +1,7 @@
 
 package com.junittesting.example1;
 
+//This is a comment in master branch
 
 public class Calculator {
     /* addition */
