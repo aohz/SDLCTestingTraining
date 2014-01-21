@@ -7,7 +7,7 @@ public class Calculator {
 	//Done task in feature 1
 	//Done task 2 in feature 1
 	//Done task 3 in feature 1
-	//Done task 3 in feature 1
+	//Done task 4 in feature 1
 
 	
     /* addition */
