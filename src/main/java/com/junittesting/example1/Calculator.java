@@ -2,6 +2,11 @@
 package com.junittesting.example1;
 
 
+//Comment for feature 2
+//Finished Task in feature 2
+//Another task in feature 2
+
+
 public class Calculator {
 	//Comment for feature 1
 	//Done task in feature 1
