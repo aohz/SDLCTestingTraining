@@ -23,6 +23,7 @@ public class CalculatorNoFrameworkTest {
         CalculatorNoFrameworkTest test = new CalculatorNoFrameworkTest();
         try {
             test.testAdd();
+            System.out.println("Test of Calculator=OK");
         }catch (Throwable e) {
             test.testErrors++;
             e.printStackTrace();
