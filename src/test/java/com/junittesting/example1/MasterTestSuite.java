@@ -9,5 +9,5 @@ import org.junit.runners.Suite.SuiteClasses;
  * 
  */
 @RunWith(value = Suite.class)
-@SuiteClasses(value = { TestSuiteA.class, TestSuiteB.class })
+@SuiteClasses(value = { TestSuiteB.class })
 public class MasterTestSuite {}
